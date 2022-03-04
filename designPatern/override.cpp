@@ -1,70 +1,28 @@
-//没不知道为啥没编译成功
-
+//override 就是对基类的虚函数进行覆盖重新声明
+//有助于代码的规范性, 整洁性
 
 #include<iostream>
-#include<string>
-
-#define MAXSTU 10
 
 using namespace std;
 
-class Person {
+class Base {
 public:
-    virtual ~Person();
-    virtual int Eat(int& num) = 0;
-    virtual void Say();
-    int Name() const;
+    virtual void funcA(int arg) const {
+        cout << "this is Base::funcA" << endl;
+    }
 };
 
-class Student :public Person {
+class Derived :public Base {
 public:
-    virtual ~Student();
-    int Eat(int& num) override {
-        --num;
-        return num;
-    }
-    void Say() override {
-        cout << "im full" << endl;
-    }
-
-};
-
-class Teacher :public Person {
-public:
-    virtual ~Teacher();
-    int Eat(int& num) override {
-        --num;
-        return num;
-    }
-    void Say() override {
-
-    }
-    int Buy(int& num) {
-        ++num;
-        return num;
+    virtual void funcA(int arg) const override {
+        cout << "this is Derived::funcA" << endl;
     }
 };
 
 int main() {
-    int cakeNum;
-    cin >> cakeNum;
-    Student* stu = new Student();
-    for (int i = 1;i <= MAXSTU;++i) {
-        stu->Eat(cakeNum);
-        stu->Say();
-    }
-    delete stu;
+    Derived* derived = new Derived();
 
-    Teacher* teacher = new Teacher();
-
-    teacher->Eat(cakeNum);
-    teacher->Eat(cakeNum);
-    teacher->Eat(cakeNum);
-    teacher->Eat(cakeNum);
-    teacher->Buy(cakeNum);
-    teacher->Buy(cakeNum);
-    delete teacher;
-    cout << cakeNum << endl;
-
+    derived->funcA(99);
     return 0;
 }
+
