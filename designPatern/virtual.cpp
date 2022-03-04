@@ -8,6 +8,8 @@
 // Base* ptr=new Derived();形式, ptr只能访问[Base Data].
 
 // 难道是为了表明 派生类中的函数是基类中声明的虚函数?
+// https://juejin.cn/post/6844904054930292749 *
+// https://www.cnblogs.com/clemente/p/13747491.html
 
 #include<iostream>
 
@@ -42,11 +44,15 @@ int main() {
     p->print();
     q->print();
     b->print();
-    p->Base::print();//派生类对象中调用基类函数.
+    p->Base::print();//派生类对象中调用基类函数. 
+    
+    // 👇下面这条语句是函数隐藏的实现
+    // 没有Base::print()语句, 默认调用派生类中的print()函数
+    // 有Base::print()时调用基类中的print()函数
     q->Base::print();
 
     delete p;
     delete q;
     delete b;
-    return 0;
+    return 0; 
 }
