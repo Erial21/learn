@@ -7,14 +7,14 @@ enum SHOES_TYPE {
     Adidas,
     Anta
 };
-//鞋子抽象类, 打印
+//鞋子抽象类, 类方法, 打印, 等于生产的产品
 class Shoes {
 public:
     virtual ~Shoes() {}
     virtual void show() = 0;
 };
 
-//品牌类, 继承鞋子抽象类, 对抽象类中定义的虚函数进行修改打印符合需求的句子
+//具象品牌类, 继承鞋子抽象类, 对抽象类中定义的虚函数进行修改打印符合需求的句子
 class Nikeshoes :public Shoes {
 public:
     void show() {
