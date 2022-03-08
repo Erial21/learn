@@ -54,6 +54,7 @@ int main() {
     pA->show();
 
     // 这事另一种调用方法
+    // 用这种!!!
     FactoryB* pB = new FactoryB();
     pB->create()->show();
 
