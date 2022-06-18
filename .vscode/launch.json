@@ -2,7 +2,7 @@
     // 使用 IntelliSense 了解相关属性。 
     // 悬停以查看现有属性的描述。
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
+    "version": "2.0.0",
     "configurations": [
         {
             "name": "g++.exe - 生成和调试活动文件",
@@ -15,7 +15,7 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "gdb",
-            "miDebuggerPath": "C:\\Program Files (x86)\\mingw-w64\\mingw64\\bin\\gdb.exe",
+            "miDebuggerPath": "C:\\Program Files\\mingw64\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
