@@ -25,7 +25,7 @@ public:
             return (int)(ret * 3 % (1000000007));
         }
         //余1的情况，3*1要分配成2*2
-        if (b == 1) {
+        if (b == 1) {                 
             ret = ret * 2 % (1000000007);
             ret = ret * 2 % (1000000007);
             return (int)ret;
