@@ -1,4 +1,4 @@
-
+// 反转链表
 #include <iostream>
 #include <vector>
 
@@ -12,8 +12,16 @@ struct ListNode {
 };
 
 class Solution {
-public:
+   public:
     ListNode* reverseList(ListNode* head) {
+        if (head == NULL || head->next == NULL) {
+            return head;
+        }
+        ListNode* cur = reverseList(head->next);
+        head->next->next = head;
 
+        head->next = nullptr;
+
+        return cur;
     }
 };
